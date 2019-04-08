@@ -29,12 +29,13 @@ public class Initializer implements CommandLineRunner {
         log.info("Initializing values");
 
         Beer beer1 = Beer.builder().name("Shiner").price((float)10).alchoholContent(AlchoholContent.MILD).build();
+        Beer beer6 = Beer.builder().name("ZigenBock").price((float)9.50).alchoholContent(AlchoholContent.MILD).build();
         Beer beer2 = Beer.builder().name("Dos Equis").price((float)7.25).alchoholContent(AlchoholContent.STRONG).build();
         Beer beer3 = Beer.builder().name("Revolver").price((float)11.25).alchoholContent(AlchoholContent.POISON).build();
         Beer beer4 = Beer.builder().name("Kingfisher").price((float)8).alchoholContent(AlchoholContent.VERY_STRONG).build();
         Beer beer5 = Beer.builder().name("Coors Light").price((float)4.25).alchoholContent(AlchoholContent.LIGHT).build();
 
-        Stream.of(beer1,beer2,beer3,beer4,beer5).forEach(beer -> beerRepository.save(beer));
+        Stream.of(beer1,beer2,beer3,beer4,beer5,beer6).forEach(beer -> beerRepository.save(beer));
 
         beerRepository.findAll().forEach(System.out::println);
 

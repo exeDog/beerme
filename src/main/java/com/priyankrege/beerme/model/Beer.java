@@ -27,6 +27,10 @@ public class Beer {
 
     private AlchoholContent alchoholContent;
 
+    public  boolean checkLevel(Beer beer,String level){
+        return beer.getAlchoholContent().toString().equals(level);
+    }
+
     @Override
     public String toString() {
         return "Beer{" +
